@@ -9,3 +9,5 @@ The simplest way to use CriticalJS is to include the critical.js file in your pa
 ```
 <script src="criticaljs.min.js" data-deferredjs="main.js"></script>
 ```
+
+

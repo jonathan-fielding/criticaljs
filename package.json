@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jonathan-fielding/criticaljs/issues"
   },
-  "homepage": "https://github.com/jonathan-fielding/criticaljs"
+  "homepage": "https://github.com/jonathan-fielding/criticaljs",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
 }
