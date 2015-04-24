@@ -36,6 +36,7 @@
 	//The critical JS will load the main JavaScript after the browsers onload event is run
 	function appendMainJS() {
 		var element = document.createElement('script');
+		element.id = 'deferredjs';
 		element.src = mainScript;
 		document.body.appendChild(element);
 	}
