@@ -1,4 +1,5 @@
-# CriticalJS
+# CriticalJS 
+[![Build Status](https://travis-ci.org/jonathan-fielding/criticaljs.svg)](https://travis-ci.org/jonathan-fielding/criticaljs)
 
 CriticalJS is a JavaScript library which enables you to improve the perceived performance of your site.
 
