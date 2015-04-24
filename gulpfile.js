@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
+var jshint = require('gulp-jshint');
 
 var pkg = require('./package.json');
 var banner = ['/**',
@@ -20,4 +21,11 @@ gulp.task('default', function() {
             .pipe(header(banner, { pkg : pkg }))
             .pipe(rename('criticaljs.min.js'))
             .pipe(gulp.dest('./dist/'));
+});
+
+// Lint Task
+gulp.task('lint', function() {
+    return gulp.src('./src/criticaljs.js')
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
