@@ -10,4 +10,6 @@ The simplest way to use CriticalJS is to include the critical.js file in your pa
 <script src="criticaljs.min.js" data-deferredjs="main.js"></script>
 ```
 
+## Contributing
 
+We have put together a useful guide on how you can contribute to CriticalJS in the CONTRIBUTE.md file in this repo.
