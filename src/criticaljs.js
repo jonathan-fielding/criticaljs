@@ -1,10 +1,7 @@
 (function(){
 	var deferLib = {};
-
-	deferLib.init = function() {
-		preregisterBehaviours();
-		deferLoadingMainJS();
-	};
+	var thisScript = document.querySelector('script[data-deferredjs]');
+	var mainScript = thisScript.getAttribute('data-deferredjs');
 
 	deferLib.registerBehaviour = function (behaviourName, registerMethod) {
 		var behaviourElements = document.querySelectorAll('[data-behaviour="' + behaviourName + '"]');
@@ -30,13 +27,17 @@
 		el.addEventListener('click', callback);
 	};
 
+	//When the dom has loaded it can start attaching event listeners
+	function init() {
+		preregisterBehaviours();
+		deferLoadingMainJS();
+	}
+
+	//The critical JS will load the main JavaScript after the browsers onload event is run
 	function appendMainJS() {
-		//For example we simulate the loading of site before we get our deferred JS
-		setTimeout(function(){
-			var element = document.createElement('script');
-			element.src = 'javascript/main.js';
-			document.body.appendChild(element);
-		}, 5000);
+		var element = document.createElement('script');
+		element.src = mainScript;
+		document.body.appendChild(element);
 	}
 
 	function deferLoadingMainJS() {
@@ -87,6 +88,8 @@
 			event.preventDefault();
 		}
 	}
+
+	document.addEventListener('DOMContentLoaded', init);
 
 	window.deferLib = deferLib;
 }());
