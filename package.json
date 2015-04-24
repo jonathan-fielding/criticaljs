@@ -1,0 +1,23 @@
+{
+  "name": "criticaljs",
+  "version": "0.0.1",
+  "description": "CriticalJS is a JavaScript library which enables you to improve the perceived performance of your site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonathan-fielding/criticaljs.git"
+  },
+  "keywords": [
+    "Defer",
+    "Performance"
+  ],
+  "author": "Jonathan Fielding <jonathan@modernweb.com> (http://modernweb.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathan-fielding/criticaljs/issues"
+  },
+  "homepage": "https://github.com/jonathan-fielding/criticaljs"
+}
