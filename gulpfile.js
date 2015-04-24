@@ -29,3 +29,6 @@ gulp.task('lint', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('default'));
 });
+
+//CI Tests
+gulp.task('travis', ['lint']);

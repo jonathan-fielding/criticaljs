@@ -4,7 +4,7 @@
   "description": "CriticalJS is a JavaScript library which enables you to improve the perceived performance of your site",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp travis"
   },
   "repository": {
     "type": "git",
