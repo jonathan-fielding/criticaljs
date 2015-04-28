@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.gallery {
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+}
+
+.gallery .image {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}

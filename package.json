@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/jonathan-fielding/criticaljs",
   "devDependencies": {
+    "babel": "^5.1.13",
     "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
     "gulp-header": "^1.2.2",
     "gulp-jshint": "^1.10.0",
     "gulp-rename": "^1.2.2",
