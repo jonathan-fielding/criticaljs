@@ -62,7 +62,7 @@
 				eventsToDefer = eventsToDefer.split(' ');
 
 				for (var j = 0; j < eventsToDefer.length; j++) {
-					deferEvent(el, eventsToDefer[i]);
+					deferEvent(el, eventsToDefer[j]);
 				}
 			}
 		}

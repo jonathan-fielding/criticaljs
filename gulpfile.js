@@ -57,7 +57,7 @@ gulp.task('docs', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('./docs/scripts/*.es6', ['docs']);
-    gulp.watch('./src/criticaljs.js', ['default']);
+    gulp.watch('./src/*.es6', ['default']);
 });
 
 //CI Tests
