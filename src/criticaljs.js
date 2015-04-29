@@ -45,13 +45,11 @@
 	}
 
 	function deferLoadingMainJS() {
-		setTimeout(function () {
-			if (document.readyState !== 'complete') {
-				window.addEventListener('load', appendMainJS, false);
-			} else {
-				appendMainJS();
-			}
-		}, 2000);
+		if (document.readyState !== 'complete') {
+			window.addEventListener('load', appendMainJS, false);
+		} else {
+			appendMainJS();
+		}
 	}
 
 	function preregisterBehaviours() {
