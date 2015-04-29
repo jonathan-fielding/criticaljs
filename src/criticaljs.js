@@ -1,17 +1,19 @@
 'use strict';
 
 (function () {
-	var deferLib = {};
+	'use strict';
+
+	var criticaljs = {};
 	var thisScript = document.querySelector('script[data-deferredjs]');
 	var mainScript = thisScript.getAttribute('data-deferredjs');
 
-	deferLib.deferred = function (el, event, removeTempEvent) {
+	criticaljs.deferred = function (el, event, removeTempEvent) {
 		var removeDeferred = removeTempEvent || true;
 		var triggeredEvents = el.getAttribute('data-triggered-events');
 		var triggeredEventsArray = triggeredEvents ? triggeredEvents.split(' ') : [];
 
 		//Return all triggered events if no event is specified
-		if (typeof event !== undefined) {
+		if (typeof event === 'undefined') {
 			return triggeredEventsArray;
 		}
 
@@ -96,5 +98,5 @@
 
 	document.addEventListener('DOMContentLoaded', init);
 
-	window.deferLib = deferLib;
+	window.criticaljs = criticaljs;
 })();

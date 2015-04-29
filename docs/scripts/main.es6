@@ -5,16 +5,21 @@
 
     for (var i = 0; i < imgs.length; i++) {
     	let img = imgs[i];
-    	let result = deferLib.deferred(img, 'click');
+    	let result = criticaljs.deferred(img, 'click');
 
 		if (result) {
-			clickImg.bind(img);
+			clickImg.bind(img)();
 		}
 
     	img.addEventListener('click', clickImg, false);
     }
 
-    function clickImg(event){
-		this.className = 'active';
+    function clickImg(){
+    	if (this.className === 'active') {
+			this.className = '';
+    	}
+    	else {
+    		this.className = 'active';
+    	}
 	}
 }());

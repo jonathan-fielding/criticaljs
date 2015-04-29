@@ -7,16 +7,20 @@
 
   for (var i = 0; i < imgs.length; i++) {
     var img = imgs[i];
-    var result = deferLib.deferred(img, 'click');
+    var result = criticaljs.deferred(img, 'click');
 
     if (result) {
-      clickImg.bind(img);
+      clickImg.bind(img)();
     }
 
     img.addEventListener('click', clickImg, false);
   }
 
-  function clickImg(event) {
-    this.className = 'active';
+  function clickImg() {
+    if (this.className === 'active') {
+      this.className = '';
+    } else {
+      this.className = 'active';
+    }
   }
 })();

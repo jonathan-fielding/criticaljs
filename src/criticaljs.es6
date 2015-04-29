@@ -1,15 +1,17 @@
 (function(){
-	var deferLib = {};
+	'use strict';
+
+	var criticaljs = {};
 	var thisScript = document.querySelector('script[data-deferredjs]');
 	var mainScript = thisScript.getAttribute('data-deferredjs');
 
-	deferLib.deferred = function(el, event, removeTempEvent) {
+	criticaljs.deferred = function(el, event, removeTempEvent) {
 		var removeDeferred = removeTempEvent || true;
 		var triggeredEvents = el.getAttribute('data-triggered-events');
-		var triggeredEventsArray = triggeredEvents ? triggeredEvents.split(" ") : [];
+		var triggeredEventsArray = triggeredEvents ? triggeredEvents.split(' ') : [];
 
 		//Return all triggered events if no event is specified
-		if (typeof event !== undefined) {
+		if (typeof event === 'undefined') {
 			return triggeredEventsArray;
 		}
 
@@ -17,7 +19,7 @@
 
 			if (removeDeferred) {
 				triggeredEventsArray.splice(triggeredEventsArray.indexOf('click'), 1);
-				el.setAttribute('data-triggered-events', triggeredEventsArray.join(" "));
+				el.setAttribute('data-triggered-events', triggeredEventsArray.join(' '));
 			}
 
 			return true;
@@ -68,6 +70,7 @@
 		}
 	}
 
+
 	function deferEvent(el, event) {
 		el.addEventListener(event, partialRight(handleDeferred, [event]));
 	}
@@ -80,20 +83,20 @@
 
 	function handleDeferred(type) {
 		var triggeredEvents = this.getAttribute('data-triggered-events');
-		var triggeredEventsArray = triggeredEvents ? triggeredEvents.split(" ") : [];
+		var triggeredEventsArray = triggeredEvents ? triggeredEvents.split(' ') : [];
 
 		if (triggeredEventsArray.indexOf(type) === -1	) {
 			triggeredEventsArray.push(type);
 		}
 
-		this.setAttribute('data-triggered-events', triggeredEventsArray.join(" "));
+		this.setAttribute('data-triggered-events', triggeredEventsArray.join(' '));
 
-		if(this.getAttribute('data-prevent-default') === "true") {
+		if(this.getAttribute('data-prevent-default') === 'true') {
 			event.preventDefault();
 		}
 	}
 
 	document.addEventListener('DOMContentLoaded', init);
 
-	window.deferLib = deferLib;
+	window.criticaljs = criticaljs;
 }());
