@@ -18,10 +18,19 @@ img {
     position: relative;
     list-style: none;
     width: 100%;
+    position: relative;
 }
 
 .gallery .image {
     float: left;
     width: 50%;
     padding: 10px;
+}
+
+.gallery .image .active {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
 }

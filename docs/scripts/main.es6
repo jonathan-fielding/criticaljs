@@ -1,18 +1,20 @@
 (function(){
 	'use strict';
 
-    var anchors = document.querySelectorAll('.gallery a');
+    var imgs = document.querySelectorAll('.gallery img');
 
-    for (var i = anchors.length - 1; i >= 0; i--) {
-    	let anchor = anchors[i];
-    	let result = deferLib.deferred(anchor, 'click');
+    for (var i = 0; i < imgs.length; i++) {
+    	let img = imgs[i];
+    	let result = deferLib.deferred(img, 'click');
 
-		console.log(result);
+		if (result) {
+			clickImg.bind(img);
+		}
 
-    	anchor.addEventListener('click', clickAnchor, false);
+    	img.addEventListener('click', clickImg, false);
     }
 
-    function clickAnchor(event){
-		
+    function clickImg(event){
+		this.className = 'active';
 	}
 }());
