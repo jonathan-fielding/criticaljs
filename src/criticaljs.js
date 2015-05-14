@@ -17,10 +17,10 @@
 			return triggeredEventsArray;
 		}
 
-		if (triggeredEventsArray.indexOf('click') !== -1) {
+		if (triggeredEventsArray.indexOf(event) !== -1) {
 
 			if (removeDeferred) {
-				triggeredEventsArray.splice(triggeredEventsArray.indexOf('click'), 1);
+				triggeredEventsArray.splice(triggeredEventsArray.indexOf(event), 1);
 				el.setAttribute('data-triggered-events', triggeredEventsArray.join(' '));
 			}
 
@@ -80,16 +80,18 @@
 	}
 
 	function handleDeferred(type) {
-		var triggeredEvents = this.getAttribute('data-triggered-events');
+		var el = this;
+
+		var triggeredEvents = el.getAttribute('data-triggered-events');
 		var triggeredEventsArray = triggeredEvents ? triggeredEvents.split(' ') : [];
 
 		if (triggeredEventsArray.indexOf(type) === -1) {
 			triggeredEventsArray.push(type);
 		}
 
-		this.setAttribute('data-triggered-events', triggeredEventsArray.join(' '));
+		el.setAttribute('data-triggered-events', triggeredEventsArray.join(' '));
 
-		if (this.getAttribute('data-prevent-default') === 'true') {
+		if (el.getAttribute('data-prevent-default') === 'true') {
 			event.preventDefault();
 		}
 	}
