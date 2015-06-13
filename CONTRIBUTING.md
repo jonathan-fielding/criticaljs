@@ -9,6 +9,7 @@ This is the simplest way you can start to contribute to CriticalJS, by reporting
 the oportunity to fix them you are also helping every site that uses the library. 
 
 * Create an issue [directly on github](https://github.com/jonathan-fielding/criticaljs/issues/new)
+* If you see an issue and the ticket already exists, add a comment on the issue
 
 ## Contributing Code
 
